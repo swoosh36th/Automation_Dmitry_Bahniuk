@@ -13,8 +13,6 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 
 public class Lecture4_2 {
-    //System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
-
 
     WebDriver driver;
 
