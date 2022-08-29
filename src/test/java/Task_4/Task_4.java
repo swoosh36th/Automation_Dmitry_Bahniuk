@@ -1,4 +1,4 @@
-package HW4;
+package Task_4;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -8,7 +8,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class HW4 {
+public class Task_4 {
     WebDriver driver;
     WebElement field;
     WebElement searchButton;
