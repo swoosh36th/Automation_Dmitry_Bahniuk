@@ -2,7 +2,7 @@ package lecture9;
 
 import org.testng.annotations.*;
 
-public class lecture9Test {
+public class lecture9_1Test {
     @BeforeTest(groups = "test9")
     public void beforeTest(){
         System.out.println("Before Test");
@@ -21,7 +21,7 @@ public class lecture9Test {
     }
     @BeforeGroups(groups = "test9")
     public void beforeGroups(){
-        System.out.println("Before Method");
+        System.out.println("Before Groups");
     }
     @Test(groups = "test9")
     public void test1(){

@@ -1,0 +1,23 @@
+<suite name="task 9" thread-count="3" parallel="tests">
+    <listeners>
+        <listener class-name="testNgUtils.Listener"/>
+    </listeners>
+    <test enabled="false" name="task 9 login test">
+        <parameter name="url" value="https://www.saucedemo.com/"/>
+        <classes>
+            <class name="task_9.task9_1Test"/>
+        </classes>
+    </test>
+    <test enabled="false" name="task 9 cart test 1.1">
+        <parameter name="url" value="https://www.saucedemo.com/"/>
+        <classes>
+            <class name="task_9.task9_2Test"/>
+        </classes>
+    </test>
+    <test name="task 9 cart test 1.2">
+        <parameter name="url" value="https://www.saucedemo.com/"/>
+        <classes>
+            <class name="task_9.task9_3Test"/>
+        </classes>
+    </test>
+</suite>
