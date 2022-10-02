@@ -5,8 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-import java.time.Duration;
-
 public class SimpleDriver {
     private static ThreadLocal<WebDriver> webDriver = new ThreadLocal<>();
 
@@ -19,9 +17,9 @@ public class SimpleDriver {
             //Третяя реализация
             //WebDriverManager.getInstance("chrome").setup();
             //Время ожидания
-            webDriver.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(7));
-            webDriver.get().manage().timeouts().scriptTimeout(Duration.ofSeconds(20));
-            webDriver.get().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(7));
+//            webDriver.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(7));
+//            webDriver.get().manage().timeouts().scriptTimeout(Duration.ofSeconds(20));
+//            webDriver.get().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(7));
         }
     }
     public static WebDriver getWebDriver(){
@@ -36,7 +34,7 @@ public class SimpleDriver {
         if (webDriver.get() != null) {
             webDriver.get().close();
             webDriver.get().quit();
-            webDriver = null;
+            webDriver.remove();
         }
     }
 

@@ -1,16 +1,13 @@
 package task_9;
 
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import pageObjects.baseObjects.BaseTest;
 import pageObjects.saucedemo.LoginPage;
 
 public class task9_1Test extends BaseTest {
     @Parameters("url")
     @BeforeMethod
-    public void precondition(String url) {
+    public void precondition(@Optional("https://www.saucedemo.com/") String url) {
         new LoginPage()
                 .open(url);
     }
