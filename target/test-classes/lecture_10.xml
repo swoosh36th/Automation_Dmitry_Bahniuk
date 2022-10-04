@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="lecture 10">
+
+    <listeners>
+        <listener class-name="testNgUtils.Listener"/>
+    </listeners>
+
+    <test enabled="false" name="Lecture 10 1.1">
+        <classes>
+            <class name="lecture10.lecture10_1Test"/>
+        </classes>
+    </test>
+
+    <test name="Lecture 10 1.2">
+        <classes>
+            <class name="lecture10.lecture10_2Test"/>
+        </classes>
+    </test>
+
+</suite>

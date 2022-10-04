@@ -1,5 +1,7 @@
 package task_9;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Step;
 import org.testng.annotations.*;
 import pageObjects.baseObjects.BaseTest;
 import pageObjects.saucedemo.BasketPage;
@@ -17,6 +19,8 @@ public class task9_3Test extends BaseTest {
                 .clickLoginBtn();
     }
     @Test(dataProvider = "item data")
+    @Description("Items in the cart")
+    @Step("Add items to cart")
     public void addItemToCartTest(String locatorInProductPage, String locatorInBasketPage, String itemName){
         new ProductPage()
                 .addItemToCart(locatorInProductPage)

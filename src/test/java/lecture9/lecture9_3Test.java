@@ -3,6 +3,7 @@ package lecture9;
 import org.testng.annotations.*;
 import pageObjects.baseObjects.BaseTest;
 import pageObjects.saucedemo.LoginPage;
+import org.testng.annotations.Test;
 
 public class lecture9_3Test extends BaseTest{
     @Parameters("url")

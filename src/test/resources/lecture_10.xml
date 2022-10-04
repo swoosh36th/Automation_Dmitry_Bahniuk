@@ -6,10 +6,16 @@
         <listener class-name="testNgUtils.Listener"/>
     </listeners>
 
-    <test name="Lecture 10">
+    <test enabled="false" name="Lecture 10 1.1">
         <classes>
-            <class name="lecture10.lecture_10Test"/>
+            <class name="lecture10.lecture10_1Test"/>
         </classes>
-
     </test>
+
+    <test name="Lecture 10 1.2">
+        <classes>
+            <class name="lecture10.lecture10_2Test"/>
+        </classes>
+    </test>
+
 </suite>

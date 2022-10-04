@@ -2,6 +2,7 @@ package lecture9;
 
 import org.testng.Reporter;
 import org.testng.annotations.*;
+import org.testng.annotations.Test;
 
 public class lecture9_1Test {
     @BeforeTest(groups = "test9")
