@@ -1,6 +1,6 @@
-package Task_6;
+package task_6;
 
-import Driver.SimpleDriver;
+import driver.SimpleDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -8,7 +8,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import static Driver.SimpleDriver.getWebDriver;
+import static driver.SimpleDriver.getWebDriver;
 import static org.openqa.selenium.support.locators.RelativeLocator.with;
 
 public class Task_6_2 {

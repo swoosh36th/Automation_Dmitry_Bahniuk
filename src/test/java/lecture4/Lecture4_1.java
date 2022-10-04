@@ -1,4 +1,4 @@
-package Lecture4;
+package lecture4;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
