@@ -10,6 +10,9 @@ public class ProductPage extends BasePage {
     private final By title = By.xpath("//span[@class='title']");
     private final By addToCartBackPackBtn = By.id("add-to-cart-sauce-labs-backpack");
     private final By cartBtn = By.id("shopping_cart_container");
+    private final By addToCartBikeLightBtn = By.id("add-to-cart-sauce-labs-bike-light");
+    private final By addToCartBoltTShirtBtn = By.id("add-to-cart-sauce-labs-bolt-t-shirt");
+    private final By topAddToCartBtn = By.xpath("(//button[text()='Add to cart'])[1]");
 
     private By getElementProduct(String productName){
         return By.xpath("//*[@class = 'inventory_item_name' and text()='"+ productName + "']ancestor::div[@class='inventory_item']");
@@ -29,6 +32,21 @@ public class ProductPage extends BasePage {
     }
     public ProductPage clickToCart(){
         click(cartBtn);
+        return this;
+    }
+    public ProductPage clickAddToCartBikeLight(){
+        click(addToCartBikeLightBtn);
+        return this;
+    }
+    public ProductPage clickAddToCartBoltTShirt(){
+        click(addToCartBoltTShirtBtn);
+        return this;
+    }
+    public void addTopItemToCart(){
+        click(topAddToCartBtn);
+    }
+    public ProductPage addItemToCart(String locator){
+        click(By.id(locator));
         return this;
     }
 }
