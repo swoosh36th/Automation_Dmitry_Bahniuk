@@ -5,35 +5,39 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import java.time.Duration;
+
 public class SimpleDriver {
-    private static WebDriver webDriver;
+    private static ThreadLocal<WebDriver> webDriver = new ThreadLocal<>();
 
     {
-        if (webDriver == null) {
+        if (webDriver.get() == null) {
             WebDriverManager.chromedriver().setup();
+            webDriver.set(new ChromeDriver(getChromeOptions()));
             //Вторая реализация
             //WebDriverManager.getInstance(DriverManagerType.CHROME).setup();
             //Третяя реализация
             //WebDriverManager.getInstance("chrome").setup();
-            webDriver = new ChromeDriver(getChromeOptions());
             //Время ожидания
-            //webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-            //webDriver.manage().timeouts().scriptTimeout(Duration.ofSeconds(20));
-            //webDriver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
+            webDriver.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(7));
+            webDriver.get().manage().timeouts().scriptTimeout(Duration.ofSeconds(20));
+            webDriver.get().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(7));
         }
     }
-    public static WebDriver getWebDriver() {
-        return webDriver;
+    public static WebDriver getWebDriver(){
+        return webDriver.get();
     }
     private static void setWebDriver() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver(getChromeOptions());
-        webDriver = driver;
+        webDriver.set(driver);
     }
     public static void closeWebDriver(){
-        webDriver.close();
-        webDriver.quit();
-        webDriver = null;
+        if (webDriver.get() != null) {
+            webDriver.get().close();
+            webDriver.get().quit();
+            webDriver = null;
+        }
     }
 
     private static ChromeOptions getChromeOptions() {

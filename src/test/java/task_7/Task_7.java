@@ -87,7 +87,7 @@ public class Task_7 extends BaseTest {
         basketPage
                 .clickRemoveFromCartBtn();
         basketPage
-                .verifyBackPackNotInCart();
+                .verifyNoItemsInCart();
     }
     @Test
     public void paymentTest(){
