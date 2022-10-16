@@ -1,7 +1,9 @@
 driver\SimpleDriver.class
 testNgUtils\Listener.class
 testNgUtils\Retry.class
+pageObjects\herokuapp\DropDownPage1.class
 pageObjects\saucedemo\ProductPage.class
+driver\UIElement.class
 pageObjects\herokuapp\NavigationItems.class
 pageObjects\baseObjects\BasePage.class
 testNgUtils\ExtentReportListener.class

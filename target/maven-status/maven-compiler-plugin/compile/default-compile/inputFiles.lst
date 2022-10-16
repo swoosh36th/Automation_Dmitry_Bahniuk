@@ -2,6 +2,7 @@ C:\remote\Automation_Dmitry_Bahniuk\src\main\java\pageObjects\saucedemo\ProductP
 C:\remote\Automation_Dmitry_Bahniuk\src\main\java\testNgUtils\InvokedMethodListener.java
 C:\remote\Automation_Dmitry_Bahniuk\src\main\java\pageObjects\baseObjects\BaseTest.java
 C:\remote\Automation_Dmitry_Bahniuk\src\main\java\testNgUtils\Listener.java
+C:\remote\Automation_Dmitry_Bahniuk\src\main\java\pageObjects\herokuapp\DropDownPage1.java
 C:\remote\Automation_Dmitry_Bahniuk\src\main\java\pageObjects\herokuapp\NavigationPage.java
 C:\remote\Automation_Dmitry_Bahniuk\src\main\java\testNgUtils\Retry.java
 C:\remote\Automation_Dmitry_Bahniuk\src\main\java\pageObjects\herokuapp\NavigationItems.java
@@ -9,6 +10,7 @@ C:\remote\Automation_Dmitry_Bahniuk\src\main\java\pageObjects\herokuapp\Sortable
 C:\remote\Automation_Dmitry_Bahniuk\src\main\java\testNgUtils\ExtentReportListener.java
 C:\remote\Automation_Dmitry_Bahniuk\src\main\java\pageObjects\saucedemo\LoginPage.java
 C:\remote\Automation_Dmitry_Bahniuk\src\main\java\driver\SimpleDriver.java
+C:\remote\Automation_Dmitry_Bahniuk\src\main\java\driver\UIElement.java
 C:\remote\Automation_Dmitry_Bahniuk\src\main\java\pageObjects\baseObjects\BasePage.java
 C:\remote\Automation_Dmitry_Bahniuk\src\main\java\pageObjects\saucedemo\CheckoutPage.java
 C:\remote\Automation_Dmitry_Bahniuk\src\main\java\pageObjects\saucedemo\BasketPage.java

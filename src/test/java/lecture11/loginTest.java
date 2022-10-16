@@ -9,7 +9,7 @@ public class loginTest extends BaseTest {
     @Parameters({"username", "password"})
     @Test
     public void loginTest(String username, String password){
-        new LoginPage()
+        get(LoginPage.class)
                 .open()
                 .enterUserName(username)
                 .enterPassword(password)

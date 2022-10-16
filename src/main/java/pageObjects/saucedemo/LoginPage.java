@@ -14,7 +14,7 @@ public class LoginPage extends BasePage {
     private final By blockedUser = By.xpath("//h3[@data-test]");
 
     public LoginPage open() {
-        driver.get("https://www.saucedemo.com/");
+        load("https://www.saucedemo.com/");
         return this;
     }
 

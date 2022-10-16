@@ -11,7 +11,7 @@ import java.util.Map;
 
 public class SortableDataTablesPage extends BasePage {
 
-    private By table = By.id("table");
+    private By table = By.id("table1");
 
     private By headers = By.xpath("//table[@id='table1']//th");
 

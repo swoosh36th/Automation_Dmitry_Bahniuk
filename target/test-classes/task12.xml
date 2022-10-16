@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Task 12">
+    
+    <test name="Sort numbers">
+        <classes>
+            <class name="task_12.task12_1Test"/>
+        </classes>
+    </test>
+    
+    <test name="Email transformation ">
+        <classes>
+            <class name="task_12.task12_2Test"/>
+        </classes>
+    </test>
+    
+</suite>
