@@ -4,8 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import pageObjects.baseObjects.BasePage;
-
-import static driver.SimpleDriver.getWebDriver;
+import pageObjects.saucedemo.entity.Login;
+import pageObjects.saucedemo.entity.LoginBuilder;
 
 public class LoginPage extends BasePage {
     private final By username = By.id("user-name");
@@ -44,14 +44,30 @@ public class LoginPage extends BasePage {
 
     }
 
-    public void verifyBlockedUser() {
-        Assert.assertEquals(getWebDriver().findElement(blockedUser).getText(),
+    public LoginPage verifyBlockedUser() {
+        Assert.assertEquals(getText(blockedUser),
                 "Epic sadface: Sorry, this user has been locked out.");
+        return this;
     }
 
-    public void verifyWrongData() {
-        Assert.assertEquals(getWebDriver().findElement(blockedUser).getText(),
+    public LoginPage verifyWrongData() {
+        Assert.assertEquals(getText(blockedUser),
                 "Epic sadface: Username and password do not match any user in this service");
+        return this;
+    }
+
+    public LoginPage standardEnterData(Login login) {
+        enterUserName(login.getUsername());
+        enterPassword(login.getPassword());
+        clickLoginBtn();
+        return this;
+    }
+
+    public LoginPage standardEnterData(LoginBuilder loginBuilder) {
+        enterUserName(loginBuilder.getUsername());
+        enterPassword(loginBuilder.getPassword());
+        clickLoginBtn();
+        return this;
     }
 }
 

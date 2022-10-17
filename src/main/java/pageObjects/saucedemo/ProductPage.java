@@ -16,50 +16,56 @@ public class ProductPage extends BasePage {
     private final By addToCartBoltTShirtBtn = By.id("add-to-cart-sauce-labs-bolt-t-shirt");
     private final By topAddToCartBtn = By.xpath("(//button[text()='Add to cart'])[1]");
 
-    private By getElementProduct(String productName){
-        return By.xpath("//*[@class = 'inventory_item_name' and text()='"+ productName + "']ancestor::div[@class='inventory_item']");
+    private By getElementProduct(String productName) {
+        return By.xpath("//*[@class = 'inventory_item_name' and text()='" + productName + "']ancestor::div[@class='inventory_item']");
     }
+
     private WebElement getAddToCartBtn(String productName) {
         return getElementProduct(productName).findElement((SearchContext) By.tagName("button"));
     }
-    public ProductPage(){
-        verifyPageUri();
-    }
-    public ProductPage verifyPageUri(){
+
+    public ProductPage verifyPageUri() {
         Assert.assertTrue(getWebDriver().getCurrentUrl().contains("inventory.html"));
         return this;
     }
-    public ProductPage verifyPageTitle(){
-        Assert.assertEquals(getWebDriver().findElement(title).getText() , "PRODUCTS");
+
+    public ProductPage verifyPageTitle() {
+        Assert.assertEquals(getWebDriver().findElement(title).getText(), "PRODUCTS");
         return this;
     }
-    public ProductPage clickAddToCartBackPack(){
+
+    public ProductPage clickAddToCartBackPack() {
         click(addToCartBackPackBtn);
         return this;
     }
-    public ProductPage clickToCart(){
+
+    public ProductPage clickToCart() {
         click(cartBtn);
         return this;
     }
-    public ProductPage clickAddToCartBikeLight(){
+
+    public ProductPage clickAddToCartBikeLight() {
         click(addToCartBikeLightBtn);
         return this;
     }
-    public ProductPage clickAddToCartBoltTShirt(){
+
+    public ProductPage clickAddToCartBoltTShirt() {
         click(addToCartBoltTShirtBtn);
         return this;
     }
-    public ProductPage addTopItemToCart(){
+
+    public ProductPage addTopItemToCart() {
         click(topAddToCartBtn);
         return this;
     }
-    public ProductPage addItemToCart(String locator){
+
+    public ProductPage addItemToCart(String locator) {
         click(By.id(locator));
         return this;
     }
 
-    public void addProductToBasket(String productName) {
+    public ProductPage addProductToBasket(String productName) {
         click(getAddToCartBtn(productName));
+        return this;
     }
-
 }

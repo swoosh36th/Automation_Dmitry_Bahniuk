@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Task 13">
+    <parameter name="url" value="https://www.saucedemo.com/"/>
+    <parameter name="standard_user" value="standard_user"/>
+    <parameter name="blocked_user" value="locked_out_user"/>
+    <parameter name="password" value="secret_sauce"/>
+    <parameter name="firstname" value="jack"/>
+    <parameter name="lastname" value="petrov"/>
+    <parameter name="zipcode" value="221133"/>
+
+    <test name="Page Factory test" enabled="false">
+        <classes>
+            <class name="task_13.pageFactoryTest"/>
+        </classes>
+    </test>
+
+    <test name="Value Object Test" enabled="false">
+        <classes>
+            <class name="task_13.valueObjectTest"/>
+        </classes>
+    </test>
+
+    <test name="Builder Test">
+        <classes>
+            <class name="task_13.builderTest"></class>
+        </classes>
+    </test>
+
+</suite>
