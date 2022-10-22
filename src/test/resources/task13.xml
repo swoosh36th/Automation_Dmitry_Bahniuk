@@ -9,13 +9,13 @@
     <parameter name="lastname" value="petrov"/>
     <parameter name="zipcode" value="221133"/>
 
-    <test name="Page Factory test" enabled="false">
+    <test name="Page Factory test">
         <classes>
             <class name="task_13.pageFactoryTest"/>
         </classes>
     </test>
 
-    <test name="Value Object Test" enabled="false">
+    <test name="Value Object Test">
         <classes>
             <class name="task_13.valueObjectTest"/>
         </classes>

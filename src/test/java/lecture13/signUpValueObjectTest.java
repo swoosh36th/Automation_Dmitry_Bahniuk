@@ -10,20 +10,20 @@ import pageObjects.moodpanda.entity.SignUp;
 import pageObjects.moodpanda.entity.SignUpBuilder;
 
 public class signUpValueObjectTest extends BaseTest {
-    @Parameters({"url", "email", "password"})
+    @Parameters()
     @Test
-    public void loginTest(String url, String email, String password) {
+    public void loginTest() {
         new HomePage()
-                .open(url);
+                .open();
         new NavigationPage()
                 .clickSignUpBtn();
 
         SignUp signUp = new SignUp(){{
-            setEmail(email);
-            setCheckbox(true);
             setFirstName("First");
             setLastName("Last");
-            setPassword(password);
+            setEmail(properties.getProperty("email"));
+            setPassword(properties.getProperty("password"));
+            setCheckbox(true);
 
         }};
 
@@ -31,16 +31,17 @@ public class signUpValueObjectTest extends BaseTest {
                 .enterData(signUp);
     }
     @Test
-    public void loginTestBuilder(String url, String email, String password) {
+    public void loginTestBuilder() {
         new HomePage()
-                .open(url);
+                .open();
         new NavigationPage()
                 .clickSignUpBtn();
 
         SignUpBuilder signUp = new SignUpBuilder.Builder()
-                .withEmail(email)
                 .withFirstName("First name")
                 .withLastName("S")
+                .withEmail(properties.getProperty("email"))
+                .withPassword(properties.getProperty("password"))
                 .withCheckbox(false)
                 .build();
 

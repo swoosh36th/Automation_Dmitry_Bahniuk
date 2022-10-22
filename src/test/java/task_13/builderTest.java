@@ -26,25 +26,25 @@ public class builderTest {
 
     @Parameters({"url", "standard_user", "password", "firstname", "lastname", "zipcode"})
     @Test
-    public void builder(String url, String standard_user, String password, String firstname, String lastname, String zipcode) {
+    public void builder_Test(String url, String standard_user, String password, String firstname, String lastname, String zipcode) {
         loginPage
                 .open(url);
-        LoginBuilder login = new LoginBuilder.Builder()
-                .withUserName(standard_user)
+        LoginBuilder login = new LoginBuilder.LoginBuilder_Lombok()
+                .withUsername(standard_user)
                 .withPassword(password)
-                .build();
+                .create();
         loginPage
                 .standardEnterData(login);
-        productPage
+        new ProductPage()
                 .clickAddToCartBackPack()
                 .clickToCart();
         basketPage
                 .clickCheckoutButton();
-        CheckOutBuilder checkOut = new CheckOutBuilder.Builder()
+        CheckOutBuilder checkOut = new CheckOutBuilder.CheckOutBuilder_Lombok()
                 .withFirstName(firstname)
                 .withLastName(lastname)
                 .withZipCode(zipcode)
-                .build();
+                .create();
         checkoutPage
                 .enterData(checkOut)
                 .clickContinueBtn()

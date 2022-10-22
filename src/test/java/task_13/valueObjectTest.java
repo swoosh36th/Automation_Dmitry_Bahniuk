@@ -34,7 +34,7 @@ public class valueObjectTest extends BaseTest {
         }};
         loginPage
                 .standardEnterData(login);
-        productPage
+        new ProductPage()
                 .clickAddToCartBackPack()
                 .clickToCart();
         basketPage

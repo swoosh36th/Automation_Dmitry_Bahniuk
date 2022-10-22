@@ -10,7 +10,7 @@ public class CheckoutPage extends BasePage {
     private final By firstName = By.id("first-name");
     private final By lastName = By.id("last-name");
     private final By zipCode = By.id("postal-code");
-    private final By continueBtn = By.id("continue");
+    private final By continueBtn = By.xpath("(//div/input)[4]");
     private final By finishBtn = By.id("finish");
     private final By completeCheckOut = By.className("complete-header");
     private final By checkoutStep1Passed = By.xpath("//div/span");
