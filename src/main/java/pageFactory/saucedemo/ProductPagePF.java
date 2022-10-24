@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import pageObjects.baseObjects.BasePage;
 
-import static driver.SimpleDriver.getWebDriver;
+import static driver.DriverManager.getDriver;
 
 public class ProductPagePF extends BasePage {
     @FindBy(xpath = "//span[@class='title']")
@@ -35,7 +35,7 @@ public class ProductPagePF extends BasePage {
         PageFactory.initElements(driver, this);
     }
     public ProductPagePF verifyPageUri(){
-        Assert.assertTrue(getWebDriver().getCurrentUrl().contains("inventory.html"));
+        Assert.assertTrue(getDriver().getCurrentUrl().contains("inventory.html"));
         return this;
     }
     public ProductPagePF verifyPageTitle(){
