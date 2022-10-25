@@ -1,10 +1,8 @@
 package pageObjects.saucedemo;
 
-import pageObjects.baseObjects.BasePage;
 import org.openqa.selenium.By;
 import org.testng.Assert;
-
-import static driver.SimpleDriver.getWebDriver;
+import pageObjects.baseObjects.BasePage;
 
 public class BasketPage extends BasePage {
     private final By itemBackPack = By.id("item_4_title_link");
@@ -15,41 +13,50 @@ public class BasketPage extends BasePage {
     private final By checkoutBtn = By.id("checkout");
     private final By topRemoveBtn = By.xpath("(//button[text()='Remove'])[1]");
 
-    public void verifyBackPackInCart() {
-        Assert.assertEquals(getWebDriver().findElement(itemBackPack).getText(), "Sauce Labs Backpack");
+    public BasketPage verifyBackPackInCart() {
+        Assert.assertEquals(getText(itemBackPack), "Sauce Labs Backpack");
+        return this;
     }
 
-    public void verifyBikeLightInCart() {
-        Assert.assertEquals(getWebDriver().findElement(itemBikeLight).getText(), "Sauce Labs Bike Light");
+    public BasketPage verifyBikeLightInCart() {
+        Assert.assertEquals(getText(itemBikeLight), "Sauce Labs Bike Light");
+        return this;
     }
 
-    public void verifyBoltTShirtInCart() {
-        Assert.assertEquals(getWebDriver().findElement(itemBoltTShirt).getText(), "Sauce Labs Bolt T-Shirt");
+    public BasketPage verifyBoltTShirtInCart() {
+        Assert.assertEquals(getText(itemBoltTShirt), "Sauce Labs Bolt T-Shirt");
+        return this;
     }
 
-    public void verifyThreeItemsInCart() {
-        Assert.assertEquals(getWebDriver().findElement(itemBackPack).getText(), "Sauce Labs Backpack");
-        Assert.assertEquals(getWebDriver().findElement(itemBikeLight).getText(), "Sauce Labs Bike Light");
-        Assert.assertEquals(getWebDriver().findElement(itemBoltTShirt).getText(), "Sauce Labs Bolt T-Shirt");
+    public BasketPage verifyThreeItemsInCart() {
+        Assert.assertEquals(getText(itemBackPack), "Sauce Labs Backpack");
+        Assert.assertEquals(getText(itemBikeLight), "Sauce Labs Bike Light");
+        Assert.assertEquals(getText(itemBoltTShirt), "Sauce Labs Bolt T-Shirt");
+        return this;
     }
 
-    public void clickRemoveFromCartBtn() {
+    public BasketPage clickRemoveFromCartBtn() {
         click(removeBackPackFromCartBtn);
+        return this;
     }
 
-    public void clickCheckoutButton() {
+    public BasketPage clickCheckoutButton() {
         click(checkoutBtn);
+        return this;
     }
-    public void deleteThreeItemsFromCart(){
+    public BasketPage deleteThreeItemsFromCart(){
         for(int i=0; i<3;i++){
             click(topRemoveBtn);
         }
+        return this;
     }
-    public void verifyNoItemsInCart(){
-        Assert.assertEquals(getWebDriver().findElement(cartBtn).getText(), "");
+    public BasketPage verifyNoItemsInCart(){
+        Assert.assertEquals(getText(cartBtn), "");
+        return this;
     }
     public BasketPage verifyItemInCart(String locator, String itemName){
         Assert.assertEquals(driver.findElement(By.id(locator)).getText(), itemName);
         return this;
+
     }
 }

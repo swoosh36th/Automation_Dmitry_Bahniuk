@@ -18,8 +18,8 @@ public class productTest extends BaseTest {
     @TmsLink("COVID-19")
     public void productTest(String username, String password, @Optional("0") String steps){
         if(steps.equals("0")){
-        new loginSteps().login(username, password);
-        new ProductPage()
+        get(loginSteps.class).login(username, password);
+        get(ProductPage.class)
                 .verifyPageTitle();
         }
     }

@@ -13,7 +13,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <test.ng.version>7.6.1</test.ng.version>
-        <selenium.version>4.4.0</selenium.version>
+        <selenium.version>4.5.0</selenium.version>
         <webdrivermanager.version>5.3.0</webdrivermanager.version>
         <extentreports.version>2.41.2</extentreports.version>
         <alluretestng.version>2.19.0</alluretestng.version>
