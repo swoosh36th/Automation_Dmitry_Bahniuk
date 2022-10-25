@@ -1,6 +1,6 @@
 package pageObjects.baseObjects;
 
-import driver.SimpleDriver;
+import io.github.bonigarcia.wdm.config.DriverManagerType;
 import lombok.extern.log4j.Log4j;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -11,8 +11,9 @@ import testNgUtils.Listener;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Properties;
 
-import static driver.SimpleDriver.closeWebDriver;
+import static driver.DriverManagerFactory.getManager;
 import static propertyHelper.PropertyReader.getProperties;
+import static driver.DriverManager.*;
 
 @Log4j
 @Listeners({Listener.class, ExtentReportListener.class})
@@ -21,10 +22,10 @@ public abstract class BaseTest {
     protected Properties properties;
 
     @BeforeTest
-    public void preconditions() {
+    public void setUp() {
         log.debug("I started new webDriver!");
-        new SimpleDriver();
         properties = getProperties();
+        getManager(DriverManagerType.valueOf(properties.getProperty("browser").toUpperCase()));
     }
 
     protected <T> T get(Class<T> page) {
@@ -39,7 +40,7 @@ public abstract class BaseTest {
     }
 
     @AfterTest
-    public void postconditions() {
+    public void stop() {
         log.debug("I closed webDriver!");
         closeWebDriver();
     }
