@@ -1,43 +1,22 @@
 package pageObjects.saucedemo.entity;
 
+import lombok.Builder;
+import lombok.Getter;
+import lombok.ToString;
+import lombok.extern.log4j.Log4j;
+
+@Getter
+@ToString
+@Builder(builderClassName = "LoginBuilder_Lombok", setterPrefix = "with", buildMethodName = "create")
+@Log4j
 public class LoginBuilder {
     private String username;
     private String password;
 
-    public static class Builder {
-        private LoginBuilder loginBuilder;
-
-        public Builder withUserName(String username) {
-            loginBuilder.username = username;
-            return this;
+    public static class LoginBuilder_Lombok {
+        public LoginBuilder_Lombok(){
         }
-
-        public Builder withPassword(String password) {
-            loginBuilder.password = password;
-            return this;
-        }
-        public Builder() {
-            this.loginBuilder = new LoginBuilder();
-        }
-
-        public LoginBuilder build() {
-            return loginBuilder;
-        }
-    }
-
-    @Override
-    public String toString() {
-        return "LoginBuilder{" +
-                "username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                '}';
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public String getPassword() {
-        return password;
     }
 }
+
+

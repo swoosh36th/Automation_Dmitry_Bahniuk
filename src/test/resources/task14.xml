@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Task 14">
+
+    <test name="Refactoring Task 7 with properties file">
+        <classes>
+            <class name="task_14.refactoringTask7WithLombok"/>
+        </classes>
+    </test>
+
+    <test name="Refactoring Task 13 with Lombok and properties file">
+        <classes>
+            <class name="task_14.refactoringTask13WithLombok"/>
+        </classes>
+    </test>
+
+</suite>

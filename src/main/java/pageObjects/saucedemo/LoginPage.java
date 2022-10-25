@@ -28,8 +28,18 @@ public class LoginPage extends BasePage {
         return this;
     }
 
+    public LoginPage enterUserName() {
+        enter(this.username, properties.getProperty("standard_user"));
+        return this;
+    }
+
     public LoginPage enterPassword(String password) {
         enter(this.password, password);
+        return this;
+    }
+
+    public LoginPage enterPassword() {
+        enter(this.password, properties.getProperty("password"));
         return this;
     }
 

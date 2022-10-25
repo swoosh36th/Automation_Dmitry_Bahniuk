@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Lecture 13" thread-count="1" parallel="tests">
-    <parameter name="url" value="https://moodpanda.com/"/>
-    <parameter name="email" value="test@test.com"/>
-    <parameter name="password" value="123456789"/>
 
-    <test name="MoodPanda PageFactory Test" enabled="false">
+    <test name="MoodPanda PageFactory Test" enabled="true">
         <classes>
             <class name="lecture13.loginPageFactoryTest"/>
         </classes>
@@ -17,7 +14,7 @@
         </classes>
     </test>
 
-    <test name="MoodPanda ValueObject">
+    <test name="MoodPanda ValueObject" enabled="false">
         <classes>
             <class name="lecture13.signUpValueObjectTest"/>
         </classes>
