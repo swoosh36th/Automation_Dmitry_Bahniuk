@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="task 10">
+    <test name="task 10 login test with parameter from mvn">
+        <parameter name="url" value=""/>
+        <classes>
+            <class name="task_10.task10"/>
+        </classes>
+    </test>
+</suite>

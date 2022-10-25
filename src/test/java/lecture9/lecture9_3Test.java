@@ -1,9 +1,6 @@
 package lecture9;
 
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import pageObjects.baseObjects.BaseTest;
 import pageObjects.saucedemo.LoginPage;
 
@@ -15,7 +12,7 @@ public class lecture9_3Test extends BaseTest{
                 .open(url);
     }
     @Test(dataProvider = "login data")
-    public void login(String username, String password){
+    public void login(@Optional("") String username, String password){
         new LoginPage()
                 .enterUserName(username)
                 .enterPassword(password)

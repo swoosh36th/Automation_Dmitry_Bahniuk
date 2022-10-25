@@ -9,7 +9,7 @@ import pageObjects.saucedemo.ProductPage;
 public class task9_3Test extends BaseTest {
     @Parameters("url")
     @BeforeMethod()
-    public void precondition(String url) {
+    public void preconditions(String url) {
         new LoginPage()
                 .open(url)
                 .enterUserName("standard_user")
