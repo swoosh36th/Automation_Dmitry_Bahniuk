@@ -1,6 +1,8 @@
 package lecture9;
 
+import org.testng.Reporter;
 import org.testng.annotations.*;
+import org.testng.annotations.Test;
 
 public class lecture9_1Test {
     @BeforeTest(groups = "test9")
@@ -25,6 +27,7 @@ public class lecture9_1Test {
     }
     @Test(groups = "test9")
     public void test1(){
+        Reporter.log("Test1");
         System.out.println("Test1");
     }
     @Test(groups = "test9new")
