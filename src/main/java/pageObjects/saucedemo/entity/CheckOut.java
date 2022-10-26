@@ -7,6 +7,4 @@ public class CheckOut {
     private String firstName;
     private String lastName;
     private String zipCode;
-
-
 }

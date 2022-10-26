@@ -11,10 +11,9 @@ import testNgUtils.Listener;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Properties;
 
+import static driver.DriverManager.closeWebDriver;
 import static driver.DriverManagerFactory.getManager;
 import static propertyHelper.PropertyReader.getProperties;
-import static driver.DriverManager.*;
-
 @Log4j
 @Listeners({Listener.class, ExtentReportListener.class})
 
@@ -23,17 +22,18 @@ public abstract class BaseTest {
 
     @BeforeTest
     public void setUp() {
-        log.debug("I started new webDriver!");
+        log.debug("I'm started new wed driver!");
         properties = getProperties();
-        getManager(DriverManagerType.valueOf(properties.getProperty("browser").toUpperCase()));
+        System.out.println(properties.containsKey("browser"));
+        getManager(DriverManagerType.valueOf(properties.containsKey("browser") ? properties.getProperty("browser").toUpperCase() : "CHROME"));
     }
 
     protected <T> T get(Class<T> page) {
         T instance = null;
         try {
             instance = page.getDeclaredConstructor().newInstance();
-        } catch (InstantiationException | InvocationTargetException | NoSuchMethodException |
-                 IllegalAccessException e) {
+        } catch (InstantiationException | IllegalAccessException | InvocationTargetException |
+                 NoSuchMethodException e) {
             throw new RuntimeException(e);
         }
         return instance;

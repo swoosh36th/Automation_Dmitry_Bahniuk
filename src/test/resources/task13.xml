@@ -15,15 +15,15 @@
         </classes>
     </test>
 
-    <test name="Value Object Test">
+    <test name="Value Object Test" enabled="false">
         <classes>
             <class name="task_13.valueObjectTest"/>
         </classes>
     </test>
 
-    <test name="Builder Test">
+    <test name="Builder Test" enabled="false">
         <classes>
-            <class name="task_13.builderTest"></class>
+            <class name="task_13.builderTest"/>
         </classes>
     </test>
 
