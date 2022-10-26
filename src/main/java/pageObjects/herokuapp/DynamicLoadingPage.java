@@ -12,7 +12,7 @@ public class DynamicLoadingPage extends BasePage{
         return By.partialLinkText(textLink);
     }
 
-    public DynamicLoadingPage clickOnExample1(String text){
+    public DynamicLoadingPage clickOnExample(String text){
         click(getByLink(text));
         return this;
     }

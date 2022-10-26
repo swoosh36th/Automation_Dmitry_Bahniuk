@@ -46,7 +46,7 @@ public class BasketPage extends BasePage {
         }
     }
     public void verifyNoItemsInCart(){
-        Assert.assertEquals(getWebDriver().findElement(cartBtn).getText(), "");
+        Assert.assertTrue(getWebDriver().findElement(cartBtn).getText().isEmpty());
     }
     public BasketPage verifyItemInCart(String locator, String itemName){
         Assert.assertEquals(driver.findElement(By.id(locator)).getText(), itemName);

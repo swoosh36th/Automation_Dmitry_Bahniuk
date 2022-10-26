@@ -14,6 +14,8 @@ public class DynamicControlsPage extends BasePage{
     private By removeBtn = By.xpath("//button[text()='Remove']");
     private By inputField = By.xpath("//form/input");
     private By edBtn = By.xpath("//button[@onclick='swapInput()']");
+    private By enabledMsg = By.xpath("//form/p");
+    private By goneMsg = By.id("message");
 
     public DynamicControlsPage clickCheckBox(){
         click(checkbox);
@@ -27,8 +29,8 @@ public class DynamicControlsPage extends BasePage{
         getWebDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(6));
         return this;
     }
-    public DynamicControlsPage verifyText1(){
-        Assert.assertEquals(getText(By.id("message")), "It's gone!");
+    public DynamicControlsPage verifyThatRemoveDone(){
+        Assert.assertEquals(getText(goneMsg), "It's gone!");
         return this;
     }
     public boolean verifyCheckboxMissing(){
@@ -46,8 +48,8 @@ public class DynamicControlsPage extends BasePage{
         click(edBtn);
         return this;
     }
-    public DynamicControlsPage verifyText2(){
-        Assert.assertEquals(getText(By.xpath("//form/p")),"It's enabled!");
+    public DynamicControlsPage verifyThatInputIsEnabled(){
+        Assert.assertEquals(getText(enabledMsg),"It's enabled!");
         return this;
     }
     public DynamicControlsPage verifyInputEnable(){

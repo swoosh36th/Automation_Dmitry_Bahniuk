@@ -31,7 +31,7 @@ public class Task_8 extends BaseTest {
                 .clickCheckBox()
                 .clickRemoveBtn()
                 .waitForText()
-                .verifyText1()
+                .verifyThatRemoveDone()
                 .verifyCheckboxMissing();
     }
 
@@ -50,7 +50,7 @@ public class Task_8 extends BaseTest {
         new DynamicControlsPage()
                 .clickEdBtn()
                 .waitForText()
-                .verifyText2()
+                .verifyThatInputIsEnabled()
                 .verifyInputEnable();
     }
 

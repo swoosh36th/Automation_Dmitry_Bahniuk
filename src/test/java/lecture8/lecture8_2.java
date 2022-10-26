@@ -21,7 +21,7 @@ public class lecture8_2 extends BaseTest {
         new NavigationPage()
                 .navigateTo(DYNAMIC_LOADING);
         String result = new DynamicLoadingPage()
-                .clickOnExample1("Example 1")
+                .clickOnExample("Example 1")
                 .clickOnStartBtn()
                 .pageIsLoaded();
         System.out.println(result);

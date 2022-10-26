@@ -12,6 +12,7 @@ public class CheckoutPage extends BasePage {
     private final By zipCode = By.id("postal-code");
     private final By continueBtn = By.id("continue");
     private final By finishBtn = By.id("finish");
+    private final By completeHeader = By.className("complete-header");
 
     public CheckoutPage enterFirstName(String firstName) {
         enter(this.firstName, firstName);
@@ -37,7 +38,7 @@ public class CheckoutPage extends BasePage {
         return this;
     }
     public CheckoutPage verifyCheckout(){
-        Assert.assertEquals(getWebDriver().findElement(By.className("complete-header")).getText(), "THANK YOU FOR YOUR ORDER");
+        Assert.assertEquals(getWebDriver().findElement(completeHeader).getText(), "THANK YOU FOR YOUR ORDER");
         return this;
     }
 }
