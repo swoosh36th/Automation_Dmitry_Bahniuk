@@ -4,10 +4,10 @@
   "age": 30,
   "work": true,
   "country": "Minsk",
-  "sex": "femail",
+  "sex": "female",
   "cars": [
     "Audi",
-    "WV"
+    "VW"
   ],
   "children": [
     {

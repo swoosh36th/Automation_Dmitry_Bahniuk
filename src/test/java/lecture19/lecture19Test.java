@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 public class lecture19Test {
-    //@Test
+    @Test(enabled = false)
     public void jsonTest() {
         Gson gson = new Gson();
         String data = getJsonData();
@@ -20,6 +20,7 @@ public class lecture19Test {
         System.out.println(gson.toJson(jsonObject));
         System.out.println(jsonObject.get("id").getAsInt());
         System.out.println(jsonObject.get("name").getAsString());
+        System.out.println(jsonObject.get("cars").getAsJsonArray().get(0).getAsString());
         System.out.println(gson.fromJson(jsonObject.get("cars"), List.class));
         System.out.println(gson.fromJson(jsonObject, Map.class));
         System.out.println(jsonObject.get("wife").getAsJsonObject().get("name"));
@@ -38,7 +39,7 @@ public class lecture19Test {
 
     public String getJsonData() {
         try {
-            return new String(Files.readAllBytes(Paths.get("files/person.json")));
+            return new String(Files.readAllBytes(Paths.get("files/json/person.json")));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
