@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "required": [
+    "id",
+    "token"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "enum": [4],
+      "type": "integer"
+    },
+    "token": {
+      "enum": ["QpwL5tke4Pnpja7X4"],
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "required": [
+    "name",
+    "job",
+    "updatedAt"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "name": {
+      "enum": ["morpheus"],
+      "type": "string"
+    },
+    "job": {
+      "enum": ["goodman"],
+      "type": "string"
+    },
+    "updatedAt": {
+      "type": "string"
+    }
+  }
+}

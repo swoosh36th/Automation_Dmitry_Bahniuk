@@ -9,7 +9,6 @@ import propertyHelper.PropertyReader;
 public class Listener implements ITestListener {
     @Override
     public void onStart(ITestContext context){
-        System.out.println(context.getSuite().getParameter("config"));
         //<условие> ? <если условие = true> : <если условие = false>
         String propertyName = context
                 .getSuite()

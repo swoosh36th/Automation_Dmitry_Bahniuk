@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:C="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Page Title</title>
+    <style>
+        table, th, td {
+        border:1px solid black;
+    }
+    </style>
+</head>
+
+<body>
+    <h1>This is a Heading</h1>
+        <h2>A basic HTML table</h2>
+
+            <table style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Company</th>
+                        <th>Contact</th>
+                        <th>Country</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Alfreds Futterkiste</td>
+                        <td>Maria Anders</td>
+                        <td>Germany</td>
+                    </tr>
+                    <tr>
+                        <td>Centro comercial Moctezuma</td>
+                        <td>Francisco Chang</td>
+                        <td>Mexico</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        <h2>Text field</h2>
+            <p>The <strong>input type="text"</strong> defines a one-line text input field:</p>
+
+            <form action="/action_page.php">
+                <label for="fname">First name:</label><br>
+                <input type="text" id="fname" name="fname"><br>
+                <label for="lname">Last name:</label><br>
+                <input type="text" id="lname" name="lname"><br><br>
+                <input type="submit" value="Submit">
+            </form>
+
+            <p>Note that the form itself is not visible.</p>
+            <p>Also note that the default width of a text field is 20 characters.</p>
+
+        <h2>Checkboxes</h2>
+            <p>The <strong>input type="checkbox"</strong> defines a checkbox:</p>
+
+            <form action="/action_page.php">
+                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                <label for="vehicle1"> I have a bike</label><br>
+                <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                <label for="vehicle2"> I have a car</label><br>
+                <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                <label for="vehicle3"> I have a boat</label><br><br>
+                <input type="submit" value="Submit">
+            </form>
+
+        <h2>The select Element</h2>
+
+            <p>The select element defines a drop-down list:</p>
+
+            <form action="/action_page.php">
+                <label for="cars">Choose a car:</label>
+                <select id="cars" name="cars">
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="fiat">Fiat</option>
+                    <option value="audi">Audi</option>
+                </select>
+                <input type="submit">
+            </form>
+
+        <h2>Input Button</h2>
+
+            <input type="button" onclick="alert('Hello World!')" value="Click Me!">
+
+
+        <h2>HTML Image</h2>
+            <img src="turtle.jpg" alt="Turtle" width="460" height="345">
+
+        <h2>Tag &ltp&gt</h2>
+            <p>This is a paragraph.</p>
+
+        <h2>Tag &lta&gt, HTML Links</h2>
+            <p><a href="https://www.w3schools.com/">Visit W3Schools.com!</a></p>
+</body>
+</html>

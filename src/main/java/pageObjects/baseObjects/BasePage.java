@@ -85,6 +85,11 @@ public abstract class BasePage {
         findElement(locator).click();
     }
 
+    protected void clickWithoutVerifyClickable(By locator) {
+        log.debug("Click without verify clickable by :: " + locator);
+        findElement(locator).click();
+    }
+
     protected String getText(WebElement webElement) {
         log.debug("I'm get text by  :: " + webElement);
         return webElement.getText();
@@ -148,14 +153,26 @@ public abstract class BasePage {
     }
 
     protected void select(By locator, Integer index){
-        log.debug("Select by locator =>" + locator + " with index" + index);
+        log.debug("Select by locator =>" + locator + " with index " + index);
         Select select = new Select(findElement(locator));
         select.selectByIndex(index);
     }
 
     protected void select(By locator, String value){
-        log.debug("Select by value =>" + locator + " with value" + value);
+        log.debug("Select by value =>" + locator + " with value " + value);
         Select select = new Select(findElement(locator));
+        select.selectByValue(value);
+    }
+
+    protected void select(WebElement webElement, Integer index){
+        log.debug("Select by value =>" + webElement + " with value " + index);
+        Select select = new Select(webElement);
+        select.selectByIndex(index);
+    }
+
+    protected void select(WebElement webElement, String value){
+        log.debug("Select by value =>" + webElement + " with value " + value);
+        Select select = new Select(webElement);
         select.selectByValue(value);
     }
 }

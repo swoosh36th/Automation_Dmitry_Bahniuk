@@ -1,5 +1,6 @@
 package task_7;
 
+import org.testng.annotations.BeforeClass;
 import pageObjects.baseObjects.BaseTest;
 import org.testng.annotations.Test;
 import pageObjects.saucedemo.BasketPage;
@@ -8,10 +9,16 @@ import pageObjects.saucedemo.LoginPage;
 import pageObjects.saucedemo.ProductPage;
 
 public class Task_7 extends BaseTest {
-    LoginPage loginPage = new LoginPage();
-    BasketPage basketPage = new BasketPage();
-    CheckoutPage checkoutPage = new CheckoutPage();
+    LoginPage loginPage;
+    BasketPage basketPage;
+    CheckoutPage checkoutPage;
 
+    @BeforeClass
+    public void precondition() {
+        loginPage = new LoginPage();
+        basketPage = new BasketPage();
+        checkoutPage = new CheckoutPage();
+    }
 
     @Test
     public void loginTest1() {
@@ -26,7 +33,7 @@ public class Task_7 extends BaseTest {
     }
 
     @Test
-    public void loginTest2() {;
+    public void loginTest2() {
         loginPage
                 .open()
                 .enterUserName("problem_user")
@@ -71,8 +78,9 @@ public class Task_7 extends BaseTest {
         basketPage
                 .verifyBackPackInCart();
     }
+
     @Test
-    public void removeItemFromCartTest(){
+    public void removeItemFromCartTest() {
         loginPage
                 .open()
                 .enterUserName("standard_user")
@@ -89,8 +97,9 @@ public class Task_7 extends BaseTest {
         basketPage
                 .verifyNoItemsInCart();
     }
+
     @Test
-    public void paymentTest(){
+    public void paymentTest() {
         loginPage
                 .open()
                 .enterUserName("standard_user")
