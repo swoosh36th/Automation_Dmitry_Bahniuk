@@ -106,7 +106,7 @@ public class task_21Test extends BaseTest {
         String selectSql = "SELECT * FROM persondata WHERE NOT firstname is null";
         get(TableDataBase.class)
                 .connectToDataBase(properties.getProperty("database-url"))
-                .insert(updateSql);
+                .update(updateSql);
         get(TableDataBase.class)
                 .connectToDataBase(properties.getProperty("database-url"))
                 .select(selectSql)
@@ -122,7 +122,7 @@ public class task_21Test extends BaseTest {
         String selectSql = "SELECT * FROM persondata WHERE city='London' AND age < 30";
         get(TableDataBase.class)
                 .connectToDataBase(properties.getProperty("database-url"))
-                .insert(updateSql);
+                .update(updateSql);
         get(TableDataBase.class)
                 .connectToDataBase(properties.getProperty("database-url"))
                 .select(selectSql)
@@ -138,7 +138,7 @@ public class task_21Test extends BaseTest {
         String selectSql = "SELECT * FROM persondata WHERE age=11";
         get(TableDataBase.class)
                 .connectToDataBase(properties.getProperty("database-url"))
-                .insert(updateSql);
+                .update(updateSql);
         get(TableDataBase.class)
                 .connectToDataBase(properties.getProperty("database-url"))
                 .select(selectSql)
@@ -154,7 +154,7 @@ public class task_21Test extends BaseTest {
         String selectSql = "SELECT * FROM persondata WHERE NOT city='Grodno'";
         get(TableDataBase.class)
                 .connectToDataBase(properties.getProperty("database-url"))
-                .insert(deleteSql);
+                .delete(deleteSql);
         get(TableDataBase.class)
                 .connectToDataBase(properties.getProperty("database-url"))
                 .select(selectSql)
@@ -170,7 +170,7 @@ public class task_21Test extends BaseTest {
         String selectSql = "SELECT * FROM persondata WHERE firstname is NOT null";
         get(TableDataBase.class)
                 .connectToDataBase(properties.getProperty("database-url"))
-                .insert(deleteSql);
+                .delete(deleteSql);
         get(TableDataBase.class)
                 .connectToDataBase(properties.getProperty("database-url"))
                 .select(selectSql)
@@ -186,7 +186,7 @@ public class task_21Test extends BaseTest {
         String selectSql = "SELECT * FROM persondata WHERE NOT lastname LIKE 'Ivan%'";
         get(TableDataBase.class)
                 .connectToDataBase(properties.getProperty("database-url"))
-                .insert(deleteSql);
+                .delete(deleteSql);
         get(TableDataBase.class)
                 .connectToDataBase(properties.getProperty("database-url"))
                 .select(selectSql)

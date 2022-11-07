@@ -1,8 +1,6 @@
 package sql;
 
-import pageObjects.baseObjects.BaseTest;
-
-public class DeleteTableFromDataBase extends BaseTest {
+public class DeleteTableFromDataBase {
     public static void main(String[] args) {
         TableDataBase tableDataBase = new TableDataBase();
         tableDataBase
